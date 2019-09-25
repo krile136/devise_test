@@ -20,6 +20,11 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  = f.fields_for :profile, Profile.new do |i|
+    .field
+      = i.label :country
+      %br/
+      = i.text_field :country
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
