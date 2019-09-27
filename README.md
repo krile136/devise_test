@@ -1,24 +1,8 @@
-# README
+# What
+deviseのユーザー機能の拡張
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- アドレス、パスワード以外のカラムの追加
+- ユーザーと１対１のテーブル情報を同時に登録
+- ユーザーと１対多のテーブル情報を同時に登録
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+解説Qiita：
