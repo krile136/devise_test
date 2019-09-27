@@ -25,6 +25,11 @@
       = i.label :country
       %br/
       = i.text_field :country
+  = f.fields_for :creditcards, Creditcard.new do |j|
+    .field
+      = j.label :credit_number
+      %br/
+      = j.text_field :credit_number
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

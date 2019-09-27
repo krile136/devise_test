@@ -12,8 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    @user = User.new
+    @user = User.new(profile_params)
     @user.build_profile
+    @user.build_creditcard
     @user.save
   end
 
@@ -61,5 +62,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
     super(resource)
+  end
+
+  private
+
+  def profile_params
+    params.permit(:sign_up, keys: [:nickname, profile_attributes: [:country], creditcards_attributes: [:credit_number]])
   end
 end
