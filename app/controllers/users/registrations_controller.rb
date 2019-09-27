@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
     @user = User.new(profile_params)
     @user.build_profile
+    @user.build_creditcard
     @user.save
   end
 
@@ -66,6 +67,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def profile_params
-    params.permit(:sign_up, keys: [:nickname, profile_attributes: [:country]])
+    params.permit(:sign_up, keys: [:nickname, profile_attributes: [:country], creditcards_attributes: [:credit_number]])
   end
 end
